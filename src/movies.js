@@ -20,11 +20,21 @@ function howManyMovies (movies) {
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear(movies) {
-    return movies.sort((a, b) => b.year - a.year)
-}
-// Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
+// function orderByYear(movies) {
+//     return movies.sort((a, b) => {
+//         if b.year - a.year
+// }
+// // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
+function orderAlphabetically(array) {
+    let sorted = [...array].sort((a, b) => {
+        return (a.title.localeCompare(b.title))
+    })
+    let firstSort = sorted.map(item => {
+        return item.title
+    })
+    return firstSort.slice(0, 20)
+}
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
