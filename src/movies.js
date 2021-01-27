@@ -16,7 +16,25 @@ function howManyMovies (movies) {
 };
 
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
-
+// function ratesAverage(movies) {
+//     if (movies.length === 0) {
+//         return 0
+//     }
+//     let ok = movies.reduce((a, b) => ({rate: a.rate + b.rate}))
+//     ok = Number((ok.rate / movies.length).toFixed(2))
+//     return ok
+// }
+function ratesAverage(movies) {
+    return (
+        Number(
+        (
+            movies.reduce((a, b) => {
+                return (a += b.rate || 0);
+            }, 0) / movies.length
+        ).toFixed(2)
+    ) || 0
+    )
+}
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
@@ -36,5 +54,8 @@ function orderAlphabetically(array) {
     return firstSort.slice(0, 20)
 }
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-
+let testString = "1h 36min"
+function hoursminutes(testString) {
+    let hours = parseInt()
+}
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
