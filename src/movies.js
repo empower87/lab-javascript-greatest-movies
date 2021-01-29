@@ -38,7 +38,6 @@ function dramaMoviesRate(array) {
   }
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear(array) {
-    console.log(array)
     const result = array.sort((a, b) => {
       if (a.year > b.year) {
         return 1;
@@ -67,10 +66,32 @@ function orderAlphabetically(arr) {
   // return first 20 items
 }
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-let testString = "1h 36min"
-function turnHoursToMinutes(testString) {
-  let hours = parseInt(testString)
-  return hours
+// let testString = "1h 36min"
+function turnHoursToMinutes(arr) {
+  let newArr = arr.map((movie) => {
+    let eachMovie = {...movie}
+    let words = eachMovie.duration.split(" ");
+    let hours = parseInt(words[0]);
+    if (words[0].includes('m'))
+    {
+      eachMovie.duration = parseInt(words[0])
+    } else {
+    
+    let minutes = 0;
+    if (words[1]) {
+      minutes = parseInt(words[1]);
+    }
 
+    let totalTime = hours * 60 + minutes;
+    eachMovie.duration = totalTime;
+    // console.log(eachMovie.duration)
+    // console.log(movie.duration)
+
+  }
+    return eachMovie;
+  });
+  // console.log(arr[0])
+  // console.log(newArr[0])
+  return newArr;
 }
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
